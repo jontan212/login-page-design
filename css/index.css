@@ -36,6 +36,11 @@ img {
 p {
   line-height: 1.6;
 }
+
+a {
+  color: var(--first-color);
+  text-decoration: none;
+}
 /* ********** Components ********** */
 /* ********** Btn google ********** */
 .btn-google {
@@ -58,11 +63,10 @@ p {
 /* ********** Form ********** */
 form {
   flex-direction: column;
-  /* justify-content: space-between; */
-  row-gap: 36px;
 
   width: 420px;
-  /* height: 505px; */
+  margin-top: 36px;
+  margin-bottom: 188px;
   padding: 0px;
 }
 
@@ -76,6 +80,9 @@ form > :nth-child(1) p {
 }
 
 form > :nth-child(2) {
+  margin-top: 36px;
+  margin-bottom: 36px;
+
   color: rgba(221, 221, 221);
   font-size: 0.75rem;
 }
@@ -114,15 +121,69 @@ form > :nth-child(3) > label > input::placeholder {
 }
 
 form > :nth-child(3) > :nth-child(3) {
+  justify-content: space-between;
+
   margin-top: 8px;
   margin-bottom: 32px;
+
+  font-size: 0.75rem;
+  color: rgba(161, 161, 161);
 }
 
-form > :nth-child(3) > :nth-child(3) input:checked{
+form > :nth-child(3) > :nth-child(3) label {
+  display: inherit;
+  align-items: center;
+}
+
+form > :nth-child(3) > :nth-child(3) input {
+  display: none;
+}
+
+form > :nth-child(3) > :nth-child(3) span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  padding: 3px 2px;
+
   background-color: var(--first-color);
+  border-radius: 2px;
+}
+
+form > :nth-child(3) > :nth-child(3) span svg {
+  position: absolute;
+  visibility: hidden;
+}
+
+form > :nth-child(3) > :nth-child(3) input:checked ~ span svg {
+  visibility: visible;
+}
+
+form > :nth-child(3) > :nth-child(4) {
+  padding: 12px 0px;
+
+  font-size: 1.125rem;
+  font-weight: 800;
+
+  color: rgb(255, 255, 255);
+  background-color: var(--first-color);
+
+  border: 0px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ********** Register ********** */
+main > :nth-child(2) > :last-child {
+  font-size: 1.125rem;
+  color: var(--gray-3);
 }
 
 /* ********** Utilities ********** */
+.weight-600 {
+  font-weight: 600;
+}
+
 .flex {
   display: flex;
 }
@@ -131,3 +192,15 @@ form > :nth-child(3) > :nth-child(3) input:checked{
   text-align: center;
 }
 /* ********** Site Styles ********** */
+main > :nth-child(1) {
+  /* height: 100vh; */
+}
+
+main > :nth-child(2) {
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  /* align-items: center; */
+  /* align-content: center; */
+  padding: 0px 190px 0px 140px;
+}
